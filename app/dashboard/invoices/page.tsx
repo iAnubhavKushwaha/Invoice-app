@@ -1,9 +1,33 @@
-import { Card } from "@/components/ui/card";
+import { InvoiceList } from "@/app/components/InvoiceList";
+import { buttonVariants } from "@/components/ui/button";
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card";
+import { PlusIcon } from "lucide-react";
+import Link from "next/link";
 
-export default function InvoicesRoute(){
-    return(
-        <Card>
-             
-        </Card>
-    )
+export default function InvoicesRoute() {
+  return (
+    <Card>
+      <CardHeader>
+        <div className="flex justify-between items-center">
+          <div>
+            <CardTitle className="text-xl font-bold">Invoices</CardTitle>
+            <CardDescription>Manage your invoices right here</CardDescription>
+          </div>
+
+          <Link href="/dashboard/invoices/create" className={buttonVariants()}>
+            <PlusIcon /> Create Invoice
+          </Link>
+        </div>
+      </CardHeader>
+      <CardContent>
+        <InvoiceList />
+      </CardContent>
+    </Card>
+  );
 }
