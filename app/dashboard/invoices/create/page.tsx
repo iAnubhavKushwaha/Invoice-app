@@ -1,7 +1,7 @@
+import { CreateInvoice } from "@/app/components/CreateInvoice";
+
 export default function InvoiceCreationRoute(){
     return(
-        <h1>
-            Invoice creation route
-        </h1>
+        <CreateInvoice/>
     )
 }
